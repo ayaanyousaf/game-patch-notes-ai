@@ -1,0 +1,29 @@
+{
+  "name": "game-patch-notes-ai",
+  "version": "1.0.0",
+  "description": "An application that embeds an LLM using OpenAI’s API to generate clean, professional video game patch notes.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayaanyousaf/game-patch-notes-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayaanyousaf/game-patch-notes-ai/issues"
+  },
+  "homepage": "https://github.com/ayaanyousaf/game-patch-notes-ai#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
+    "openai": "^6.9.1"
+  }
+}
