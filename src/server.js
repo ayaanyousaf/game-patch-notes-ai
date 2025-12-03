@@ -27,7 +27,16 @@ app.post("/api/generate", async (req, res) => {
       .json({ error: "Missing or invalid 'changes' field." });
   }
 
-  // Placeholder LLM response
+  // Long input check
+  if (changes.length > 2000) {
+    return res.status(400).json({ error: "Error: input too long." });
+  }
+
+  // Check obvious prompt injection BEFORE LLM call
+  if (/ignore previous instructions/i.test(changes))
+    return res.status(400).json({ error: "Error: unsafe input detected." });
+
+  // Patch note generation using LLM and user input
   try {
     const result = await generatePatchNotes(changes);
 
