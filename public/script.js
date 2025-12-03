@@ -1,3 +1,4 @@
+// Handle Generate Patch Notes button click
 document.getElementById("generateBtn").addEventListener("click", async () => {
   const input = document.getElementById("input").value.trim();
   const outputContainer = document.getElementById("outputContainer");
@@ -32,4 +33,17 @@ document.getElementById("generateBtn").addEventListener("click", async () => {
   } catch (err) {
     output.textContent = "Error: Could not reach server.";
   }
+});
+
+// Copy to clipboard functionality
+document.getElementById("copyBtn")?.addEventListener("click", () => {
+  const text = document.getElementById("output").textContent;
+  navigator.clipboard
+    .writeText(text)
+    .then(() => {
+      alert("Patch notes copied!");
+    })
+    .catch(() => {
+      alert("Failed to copy.");
+    });
 });
