@@ -1,9 +1,9 @@
-# PatchGen
+# PatchGen - AI Game Patch Notes Generator
 ##### Author: Ayaan Yousaf
 ## 📝 Overview
 ▶️ Demo Video - Coming soon...
 
-An LLM-powered web application that converts raw updates for videogames into clean, structured, professional developer patch notes.  
+An LLM-powered web application that converts raw updates for video games into clean, structured, professional developer patch notes.  
 
 Built with Node.js, Express, Google Gemini API, and Tailwind CSS.
 
