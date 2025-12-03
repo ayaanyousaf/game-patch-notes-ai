@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PatchGen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  </head>
+
+  <body class="text-white">
+
+    <!-- Root Container -->
+    <div class="max-w-3xl mx-auto mt-12 px-4">
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <h1 class="font-bold text-5xl mb-5">Patch<span class="text-blue-400">Gen</span></h1>
+        <p class="text-gray-300 text-lg">
+          Generate clean, professional video game patch notes instantly. Automatically organize your updates into concise sections. Uses Google Gemini AI.
+        </p>
+      </div>
+
+      <!-- Input field -->
+      <div class="bg-gray-800 rounded-2xl p-6 shadow-lg">
+        <label class="block mb-4 font-semibold">List of Changes:</label>
+
+        <textarea
+          id="input"
+          placeholder="- Increased SMG recoil&#10;- Fixed crash on spawn"
+          class="w-full h-40 p-4 bg-gray-700 rounded-xl text-white focus:ring-2 focus:ring-blue-500 outline-none"
+        ></textarea>
+
+        <button
+          id="generateBtn"
+          class="mt-4 w-1/4 bg-blue-600 hover:bg-blue-700 transition-all py-3 rounded-xl font-semibold"
+        >
+          Generate
+        </button>
+      </div>
+
+      <!-- Output -->
+      <div id="outputContainer" class="bg-gray-800 rounded-2xl p-6 shadow-lg mt-8 hidden">
+        <h2 class="text-xl font-semibold mb-3">Generated Patch Notes:</h2>
+        <pre id="output" class="whitespace-pre-wrap text-gray-200"></pre>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>
