@@ -3,11 +3,9 @@
 ## 📝 Overview
 ▶️ Demo Video - Coming soon...
 
-An LLM-powered web application that converts raw updates for video games into clean, structured, professional developer patch notes.  
+An LLM-powered web application that converts raw updates for video games into clean, structured, professional developer patch notes. This application uses the Gemini 2.5 Flash model for text generation. The model can be swapped by modifying ```src/llm.js```.
 
 Built with Node.js, Express, Google Gemini API, and Tailwind CSS.
-
-This application uses the Gemini 2.5 Flash model for text generation. The model can be swapped by modifying ```src/llm.js```.
 
 ![PatchGen Demo](assets/PatchGen_DEMO.gif)
 ---
