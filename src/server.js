@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { exec } from "child_process";
 import { generatePatchNotes } from "./llm.js";
 
 dotenv.config();
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("Game Patch Notes AI server is running...");
 });
 
-// Patch note generation route (placeholder)
+// Patch note generation route
 app.post("/api/generate", async (req, res) => {
   const { changes } = req.body;
 
@@ -62,4 +63,17 @@ app.post("/api/generate", async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
+
+  // Automatically open the client interface (NOTE: may not work with WSL)
+  const url = `http://localhost:${PORT}`;
+  switch (process.platform) {
+    case "darwin": // macOS
+      exec(`open ${url}`);
+      break;
+    case "win32": // Windows
+      exec(`start ${url}`);
+      break;
+    default: // Linux
+      exec(`xdg-open ${url}`);
+  }
 });
